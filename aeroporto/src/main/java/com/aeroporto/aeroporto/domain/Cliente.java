@@ -13,13 +13,18 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Builder
-public class passageiro{
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   // @Column(name = "ID")
+    // @Column(name = "ID")
     private long id;
     private String name;
     private int numeroVoo;
-    private String destino;
+  //  private String destino;
+    private String município;
+    private String estado;
+    private int cep;
+    private int telefone;
+    private int cpf;
 
 }
