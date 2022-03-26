@@ -22,7 +22,8 @@ public class Aviao {
     private int qtdTurbinas;
     private int capacPassageiros;
     //??????????????
-//    @OneToMany(mappedBy = "Voo", cascade = CascadeType.ALL)
-//    @JoinColumn(name = "aviao_modelo")
-//    private List<Aviao> aviaoList;
+    @OneToMany(mappedBy = "Voo", cascade = CascadeType.ALL)
+    @JoinColumn(name = "aviao_modelo")
+    private List<Aviao> aviaoList;
+
 }

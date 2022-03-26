@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 //@Data
@@ -24,9 +21,9 @@ public class Voo {
 //    private Aeroporto aeroportoChegada;
     private LocalDate horaChegada;
     private LocalDate dataChegada;
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "aviao_modelo")
-//    private Aviao aviao;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "aviao_modelo")
+    private Aviao aviao;
     private int lotacao;
     private double pesoCarga;
     private double precoViagem;
