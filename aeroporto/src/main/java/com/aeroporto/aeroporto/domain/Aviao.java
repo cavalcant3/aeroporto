@@ -2,13 +2,12 @@ package com.aeroporto.aeroporto.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -18,14 +17,12 @@ public class Aviao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String identificacao;
+    private double capacCarga;
     private String modelo;
     private int qtdTurbinas;
     private int capacPassageiros;
-    private double capacCarga;
-
-//??????????????
-    @ManyToOne
-    private List<Voo> voo;
-
-
+    //??????????????
+//    @OneToMany(mappedBy = "Voo", cascade = CascadeType.ALL)
+//    @JoinColumn(name = "aviao_modelo")
+//    private List<Aviao> aviaoList;
 }

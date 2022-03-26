@@ -2,13 +2,15 @@ package com.aeroporto.aeroporto.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -18,15 +20,23 @@ public class Voo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 //    aqui ou ali vou ter a lista?
-    @OneToMany
-    private Aviao aviao;
-    @OneToMany
-    private Aeroporto aeroportoPartida;
-    @OneToMany
-    private Aeroporto aeroportoChegada;
+
+//    private Aeroporto aeroportoChegada;
     private LocalDate horaChegada;
     private LocalDate dataChegada;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "aviao_modelo")
+//    private Aviao aviao;
     private int lotacao;
     private double pesoCarga;
     private double precoViagem;
+
+ //   @OneToMany(mappedBy = "voo",cascade = CascadeType.ALL)
+ //   @JoinColumn(name ="modelo")
+//    private List<Aviao> aviaos;
+//
+//    public Aviao getAviao() {
+//        return aviao;
+//    }
+
 }
