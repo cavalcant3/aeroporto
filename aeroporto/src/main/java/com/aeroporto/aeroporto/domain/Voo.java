@@ -28,12 +28,7 @@ public class Voo {
     private double pesoCarga;
     private double precoViagem;
 
- //   @OneToMany(mappedBy = "voo",cascade = CascadeType.ALL)
- //   @JoinColumn(name ="modelo")
-//    private List<Aviao> aviaos;
-//
-//    public Aviao getAviao() {
-//        return aviao;
-//    }
+ //@OneToOne
+// aeroporto chegada/partida
 
 }
